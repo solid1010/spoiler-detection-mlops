@@ -1,0 +1,5 @@
+outs:
+- md5: e2846b0efe3e2cb594a48c09eee5b432
+  size: 952594008
+  hash: md5
+  path: IMDB_reviews.json
