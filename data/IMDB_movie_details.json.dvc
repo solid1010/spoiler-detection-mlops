@@ -1,0 +1,5 @@
+outs:
+- md5: 2bd0211c13dfb9bf626bb2d60be3472f
+  size: 14184615
+  hash: md5
+  path: IMDB_movie_details.json
