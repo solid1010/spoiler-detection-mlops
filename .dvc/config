@@ -1,5 +1,6 @@
 [core]
     remote = storage
+    autostage = true
 ['remote "storage"']
     url = gdrive://1cxzxgQ-f56zT-IaaMsMDcrLrh_cdqLXs
     gdrive_client_id = 924789195816-gqoh44hv57dkkmded2eim7sogkkl0mo4.apps.googleusercontent.com
