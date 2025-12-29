@@ -1,6 +1,4 @@
-This is a professional, industry-standard **README.md** file. It covers everything from the system architecture to the step-by-step setup instructions. You can copy the content below and save it as `README.md` in your project's root directory.
 
----
 
 # 🛡️ Spoiler Detection on IMDB Reviews: End-to-End MLOps Pipeline
 
@@ -21,12 +19,15 @@ This project implements a fully automated **MLOps pipeline** designed to detect 
 * **Database:** [PostgreSQL](https://www.postgresql.org/)
 * **Dashboard:** [Streamlit](https://streamlit.io/)
 * **Model:** [Hugging Face Transformers](https://huggingface.co/) (DistilBERT)
+* **Versioning & Tracking:** [DVC](https://dvc.org/) (Data/Model) & [MLflow](https://mlflow.org/) (Experiments)
 * **Containerization:** [Docker](https://www.docker.com/) & Docker Compose
 * **Language:** Python 3.8+
 
 ---
 
 ## 📐 System Architecture
+
+
 
 The system consists of three main services connected via a dedicated Docker network:
 
@@ -41,24 +42,28 @@ The system consists of three main services connected via a dedicated Docker netw
 ### 1. Prerequisites
 
 Ensure you have the following installed:
-
 * [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 * Git
+* DVC (Data Version Control)
 
 ### 2. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/spoiler-detection-mlops.git
+git clone [https://github.com/solid1010/spoiler-detection-mlops.git](https://github.com/solid1010/spoiler-detection-mlops.git)
 cd spoiler-detection-mlops
 
 ```
 
-### 3. Project Structure Setup
+### 3. Data & Model Management (DVC)
 
-Before running the system, ensure you have your local model and data files in the correct directories:
+This project uses **DVC** to manage large datasets and model artifacts. To pull the required data and model files from the remote storage (Google Drive), run:
 
-* Place your pre-trained model files in the `./models/` folder.
-* Place your raw data (e.g., `data.json`) in the `./data/` folder.
+```bash
+dvc pull
+
+```
+
+> **Note:** This step will populate the `./data/` and `./models/` (or `mlruns`) directories. Ensure you have the necessary access permissions for the DVC remote.
 
 ### 4. Build and Launch
 
@@ -80,17 +85,17 @@ Once the containers are running, you can access the interfaces via your browser:
 
 ## 📊 Monitoring & Model Drift
 
-One of the core features of this project is the **Performance & Drift** tab on the dashboard. It calculates accuracy by comparing `ground_truth` labels with `model_predictions` in real-time.
+The **Performance & Drift** tab on the dashboard calculates accuracy by comparing `ground_truth` labels with `model_predictions` in real-time.
 
-* **Drift Detection:** If the accuracy drops over time (visualized in a line chart), it signals that the model needs retraining due to changing data patterns.
-* **Error Analysis:** A Confusion Matrix is generated automatically to identify if the model is producing more False Positives (Clean reviews marked as Spoiler) or False Negatives.
-
- 
-* **Model Link**
-https://drive.google.com/drive/u/1/folders/1eKVN1KP_Q1IPNz32PXhHc5QA39kBo8wc
-
-* **Data Link**
-https://drive.google.com/drive/u/1/folders/1LEFazU-hQv9QyN6ikHidbBcJpmLlFpgJ
+* **Drift Detection:** Visualizes accuracy over time to signal when the model needs retraining due to changing data patterns.
+* **Error Analysis:** Automatically generates a Confusion Matrix to identify False Positives and False Negatives.
 
 ---
+
+## 🔗 Project Assets (Manual Access)
+
+* **Model Storage:** [Google Drive Link](https://drive.google.com/drive/u/1/folders/1eKVN1KP_Q1IPNz32PXhHc5QA39kBo8wc)
+* **Dataset Source:** [Google Drive Link](https://drive.google.com/drive/u/1/folders/1LEFazU-hQv9QyN6ikHidbBcJpmLlFpgJ)
+
+```
 
