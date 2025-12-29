@@ -2,7 +2,7 @@ This is a professional, industry-standard **README.md** file. It covers everythi
 
 ---
 
-# 🛡️ Movie Spoiler Detection: End-to-End MLOps Pipeline
+# 🛡️ Spoiler Detection on IMDB Reviews: End-to-End MLOps Pipeline
 
 This project implements a fully automated **MLOps pipeline** designed to detect spoilers in movie reviews. It leverages a containerized architecture to handle data ingestion, model inference, and real-time performance monitoring.
 
